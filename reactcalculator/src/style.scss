@@ -1,0 +1,128 @@
+$number-button-color:#313131;
+$number-button-color-active:#6e6e6e;
+$clear-button-color:#a0a0a0;
+$clear-button-color-active:#bdbdbd;
+$operator-button-color:#f59906;
+$operator-button-color-active:#f7ad38;
+$expression-color:#bdbdbd;
+$input-color:white;
+$main-font:'Nunito Sans', sans-serif;
+$main-color:#808080;
+
+*{
+  margin:0;
+  padding:0;
+}
+
+body{
+  background-color:$main-color;
+  height:100vh;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+
+.calculator-wrapper{
+  background-color:black;
+  border-radius:40px;
+  width:24.3em;
+}
+
+.container{
+  padding:3em 1em;
+  width:20em;
+  display:grid;
+  gap:.75rem;
+  grid-auto-columns:1fr;
+  grid-template-areas:
+    "display-section display-section display-section display-section"
+    "clear clear divide multiply"
+    "seven eight nine subtract"
+    "four five six add"
+    "one two three equals"
+    "zero zero decimal equals";
+}
+
+$identifiers: display-section, clear, divide, multiply, seven, eight, nine, subtract, four, five, six, add, one, two , three, equals, zero, decimal;
+
+@each $id in $identifiers{
+  ##{$id}{
+    grid-area:$id;
+  }
+}
+
+#display-section{
+  font-family:$main-font;
+  text-align:right;
+  
+  #expression{
+    color:$expression-color;
+    font-size:30px;
+  }
+  
+  #display{
+    color:$input-color;
+    font-size:60px;
+  }
+}
+
+button{  
+ font-family: $main-font;
+ font-size:30px;
+ outline:none;
+ border:none;
+ cursor:pointer;
+}
+
+#clear{
+  background-color:$clear-button-color;
+}
+
+#clear:active{
+  background-color:$clear-button-color-active;
+}
+
+.number-button{
+  background-color:$number-button-color;
+  color:$input-color;
+}
+
+.number-button:active{
+  background-color:$number-button-color-active;
+}
+
+.operator-button{
+  background-color:$operator-button-color;
+  color:$input-color;
+}
+
+.operator-button:active{
+  background-color:$operator-button-color-active;
+}
+
+.rounded-button{
+  width:80px;
+  height:80px;
+  border-radius:40px;
+}
+
+.rectangle-button{
+  border-radius:40px;
+}
+
+
+@media screen and (max-width:700px){
+  #display-section{
+    margin-right:5px;
+  }
+  .rounded-button{
+    width:70px;
+    height:70px;
+  }
+  .calculator-wrapper{
+    width:22em;
+  }
+  #equals{
+    width:70px;
+  }
+}

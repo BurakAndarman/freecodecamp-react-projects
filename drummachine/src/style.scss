@@ -1,0 +1,99 @@
+$main-color:#263238;
+$accent-color:#455A64;
+$button-color:#607D8B;
+$main-font:'Oxygen',sans-serif;
+$button-active-color:#AFB42B;
+
+*{
+  margin:0;
+  padding:0;
+}
+
+#root{  
+  font-family:$main-font;
+  height:100vh;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  background-color:$main-color;
+}
+
+#drum-machine{
+  background-color:$accent-color;
+  border-radius:20px;
+}
+
+.drum-wrapper{
+  width:22em;  
+  padding:1.5em;
+}
+
+.drum{
+  display:grid;
+  grid-template-columns:1fr 1fr 1fr;
+  grid-template-rows:1fr 1fr 1fr;
+  grid-gap:1em;
+}
+
+.drum-pad{
+  background-color:$button-color;
+  font-family:$main-font;
+  font-weight:bold;
+  box-shadow:5px 5px 1em;
+  outline:none;
+  border:none;
+  border-radius:30%;
+  height:8em;
+  width:8em;
+  cursor:pointer;
+}
+
+.drum-pad:active{
+  background-color:$button-active-color;
+  box-shadow:none;
+}
+
+.otherWrapper{
+  display:flex;
+  flex-direction:row-reverse;
+  justify-content:space-around;
+  align-items:center;
+  margin:1em 0;
+}
+
+.keyDisplayWrapper{
+  background-color:$main-color;
+  text-align:center;
+  width:10em;
+  height:1.5em;
+  padding:1em;
+  color:white;
+  border-radius:5px;
+}
+
+#onOffButton{
+  font-family:$main-font;
+  background-color:$main-color;
+  color:white;
+  outline:none;
+  cursor:pointer;
+  padding:1em;
+  border-radius:5px;
+  border:none;
+  box-shadow:5px 5px 1em black;
+}
+
+#onOffButton:active{
+  background-color:#78909C;
+  box-shadow:none;
+}
+
+@media screen and (max-width:700px){
+  .drum-wrapper{
+    width:17em;
+  }
+  .drum-pad{
+    height:6em;
+    width:6em;
+  }
+}

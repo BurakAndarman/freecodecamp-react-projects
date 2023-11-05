@@ -1,0 +1,175 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: #808080;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.calculator-wrapper {
+  background-color: black;
+  border-radius: 40px;
+  width: 24.3em;
+}
+
+.container {
+  padding: 3em 1em;
+  width: 20em;
+  display: grid;
+  gap: 0.75rem;
+  grid-auto-columns: 1fr;
+  grid-template-areas: "display-section display-section display-section display-section" "clear clear divide multiply" "seven eight nine subtract" "four five six add" "one two three equals" "zero zero decimal equals";
+}
+
+#display-section {
+  grid-area: display-section;
+}
+
+#clear {
+  grid-area: clear;
+}
+
+#divide {
+  grid-area: divide;
+}
+
+#multiply {
+  grid-area: multiply;
+}
+
+#seven {
+  grid-area: seven;
+}
+
+#eight {
+  grid-area: eight;
+}
+
+#nine {
+  grid-area: nine;
+}
+
+#subtract {
+  grid-area: subtract;
+}
+
+#four {
+  grid-area: four;
+}
+
+#five {
+  grid-area: five;
+}
+
+#six {
+  grid-area: six;
+}
+
+#add {
+  grid-area: add;
+}
+
+#one {
+  grid-area: one;
+}
+
+#two {
+  grid-area: two;
+}
+
+#three {
+  grid-area: three;
+}
+
+#equals {
+  grid-area: equals;
+}
+
+#zero {
+  grid-area: zero;
+}
+
+#decimal {
+  grid-area: decimal;
+}
+
+#display-section {
+  font-family: "Nunito Sans", sans-serif;
+  text-align: right;
+}
+#display-section #expression {
+  color: #bdbdbd;
+  font-size: 30px;
+}
+#display-section #display {
+  color: white;
+  font-size: 60px;
+}
+
+button {
+  font-family: "Nunito Sans", sans-serif;
+  font-size: 30px;
+  outline: none;
+  border: none;
+  cursor: pointer;
+}
+
+#clear {
+  background-color: #a0a0a0;
+}
+
+#clear:active {
+  background-color: #bdbdbd;
+}
+
+.number-button {
+  background-color: #313131;
+  color: white;
+}
+
+.number-button:active {
+  background-color: #6e6e6e;
+}
+
+.operator-button {
+  background-color: #f59906;
+  color: white;
+}
+
+.operator-button:active {
+  background-color: #f7ad38;
+}
+
+.rounded-button {
+  width: 80px;
+  height: 80px;
+  border-radius: 40px;
+}
+
+.rectangle-button {
+  border-radius: 40px;
+}
+
+@media screen and (max-width: 700px) {
+  #display-section {
+    margin-right: 5px;
+  }
+
+  .rounded-button {
+    width: 70px;
+    height: 70px;
+  }
+
+  .calculator-wrapper {
+    width: 22em;
+  }
+
+  #equals {
+    width: 70px;
+  }
+}
